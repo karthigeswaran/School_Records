@@ -1,5 +1,5 @@
 package com.karthi.school;
 
-public class Record {
-  
+public class Controller {
+
 }
