@@ -2,8 +2,8 @@ package com.karthi.school.view;
 
 import java.util.Scanner;
 
-import com.karthi.school.Controller;
-import com.karthi.school.Option;
+import com.karthi.school.controller.Controller;
+import com.karthi.school.main.Option;
 
 abstract public class View<T> {
   Option option;

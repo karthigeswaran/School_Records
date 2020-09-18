@@ -1,19 +1,17 @@
-package com.karthi.school.view.studentView;
+package com.karthi.school.view;
 
 import java.util.Scanner;
 
-import com.karthi.school.Controller;
-import com.karthi.school.Option;
-import com.karthi.school.Student;
+import com.karthi.school.controller.Controller;
+import com.karthi.school.main.Option;
+import com.karthi.school.main.Student;
 
 public class ReadView<T> {
 
   public ReadView(Option option, Controller controller, Student student, Scanner scanner) {
-    super(option, controller, student, scanner);
-   
+     
   }
 
-  @Override
   public void run() {
     
   }

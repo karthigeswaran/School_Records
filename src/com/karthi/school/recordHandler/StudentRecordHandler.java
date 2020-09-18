@@ -25,8 +25,12 @@ public class StudentRecordHandler extends RecordHandler {
       }
       statement = connection.createStatement();
       
-      command = "SELECT  FROM batch WHERE "
-      resultSet = 
+      command = "SELECT  FROM batch WHERE ";
+      //resultSet = 
+    }catch(Exception e){
+
+    }finally{
+
     }
     return null;
   }

@@ -1,7 +1,5 @@
 package com.karthi.school.main;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import org.json.simple.JSONObject;
