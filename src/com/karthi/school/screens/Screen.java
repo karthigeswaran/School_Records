@@ -5,6 +5,7 @@ import java.util.Scanner;
 abstract public class Screen {
   Scanner scanner;
   String displayInfo;
+  
   public Screen(Scanner scanner,String displayInfo){
     this.scanner = scanner;
     this.displayInfo = displayInfo;

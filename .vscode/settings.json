@@ -1,7 +1,7 @@
 {
   "java.project.referencedLibraries": [
     "lib/**/*.jar",
-    "c:\\Users\\karthigeswaran\\Desktop\\practise\\java\\mysql-connector-java-5.1.49\\mysql-connector-java-5.1.49.jar"
+    "c:\\Users\\karthigeswaran\\Desktop\\practise\\json-simple-2.1.2.jar"
   ],
   "git.ignoreLimitWarning": true
 }

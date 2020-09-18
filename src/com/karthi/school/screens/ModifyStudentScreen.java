@@ -3,15 +3,19 @@ package com.karthi.school.screens;
 import java.awt.Toolkit;
 import java.util.Scanner;
 
-import com.karthi.school.view.studentView.*;
+import com.karthi.school.view.*;
+import com.karthi.school.Option;
 import com.karthi.school.Student;
+import com.karthi.school.controller.StudentController;
 
 public class ModifyStudentScreen extends Screen {
   private final static String DISPLAY_INFO = "Student Records.";
-  Student student;
+  Student student = new Student();
+  Option option = new Option("Student");
+  StudentRecordHandler studentRecordHandler = new StudentRecordHandler()
+  StudentController studentController = new StudentController(scanner, studentRecordHandler);
   public ModifyStudentScreen(Scanner scanner) {
     super(scanner, DISPLAY_INFO);
-    
   }
 
   @Override
@@ -22,19 +26,19 @@ public class ModifyStudentScreen extends Screen {
       int option = getInteger();
       switch(option){
         case 1:
-          CreateStudentView createView = new CreateStudentView(null, null, student, scanner);
+          CreateView<Student> createView = new CreateView(null, null, student, scanner);
           createView.run();
           break;
         case 2:
-          ReadStudentView readView = new ReadStudentView(null, null, student, scanner);
+          ReadView readView = new ReadView(null, null, student, scanner);
           readView.run();
           break;
         case 3:
-          UpdateStudentView updateView = new UpdateStudentView(null, null, student, scanner);
+          UpdateView updateView = new UpdateView(null, null, student, scanner);
           updateView.run();
           break;
         case 4:
-          DeleteStudentView deleteView = new DeleteStudentView(null, null, student, scanner);
+          DeleteView deleteView = new DeleteView(null, null, student, scanner);
           deleteView.run();
           break;
         case 5:
