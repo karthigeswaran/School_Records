@@ -1,13 +1,11 @@
 package com.karthi.school.main;
 
-import java.util.Date;
-
 public class Student extends Entity{
 	private String name;
 	private Integer clss;
 	private Character section;
-	private Date dob;
-	private Integer id;
+	private String dob;
+	private Integer studentID;
 
 	public void setName(String name) {
 		this.name = name;
@@ -33,20 +31,34 @@ public class Student extends Entity{
 		return section;
 	}
 
-	public void setDOB(Date dob) {
+	public void setDOB(String dob) {
 		this.dob = dob;
 	}
 
-	public Date getDOB(){
+	public String getDOB(){
 		return dob;
 	}
 
-	public void setID(Integer id) {
-		this.id = id;
+	public void setStudentID(Integer studentID) {
+		this.studentID = studentID;
 	}
 	
-	public Integer getID(){
-		return id;
+	public Integer getStudentID(){
+		return studentID;
 	}
-  
+	
+	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("Student Name: ");
+		sb.append(name);
+		sb.append("\nClass: ");
+		sb.append(clss);
+		sb.append("\nSection: ");
+		sb.append(section);
+		sb.append("\nDate of Birth: ");
+		sb.append(dob);
+		sb.append("\nstudentID number: ");
+		sb.append(studentID);
+		return sb.toString();
+	}
 }

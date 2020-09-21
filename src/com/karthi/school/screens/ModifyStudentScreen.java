@@ -12,9 +12,10 @@ import com.karthi.school.controller.StudentController;
 public class ModifyStudentScreen extends Screen {
   private final static String DISPLAY_INFO = "Student Records.";
   Student student = new Student();
-  Option option = new Option("Student");
   StudentRecordHandler studentRecordHandler = new StudentRecordHandler();
   StudentController studentController = new StudentController(scanner, studentRecordHandler);
+  Option option = new Option("Student");
+  
   public ModifyStudentScreen(Scanner scanner) {
     super(scanner, DISPLAY_INFO);
   }
@@ -33,6 +34,13 @@ public class ModifyStudentScreen extends Screen {
         case 2:
           ReadView<Student> readView = new ReadView<Student>(option, studentController, student, scanner);
           readView.run();
+          System.out.println("Modify Result for this student?(y/n)");
+          /*
+          if(scanner.next().equals("y")){
+            ResultScreen resultScreen = new ResultScreen()
+          }
+          boolean flag
+          */
           break;
         case 3:
           UpdateView<Student> updateView = new UpdateView<Student>(option, studentController, student, scanner);

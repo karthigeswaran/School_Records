@@ -14,7 +14,7 @@ public class AdminScreen extends Screen{
   protected void run() {
     boolean runFlag = true;
     while(runFlag){
-      System.out.print("1.Modify Student\n2.Modify Section\n3.Modify Exam\n4.Modify Regulation\n5.Exit\nEnter option: ");
+      System.out.print("1.Modify Student\n2.Modify Section\n3.Modify Exam\n4.Modify Regulation\n5.Modify Batch\n6.Exit\nEnter option: ");
       int option = getInteger();
       switch(option){
         case 1:
@@ -38,6 +38,11 @@ public class AdminScreen extends Screen{
           regulationScreen.runner();
           break;
         case 5:
+          System.out.println("Accessing Batch Records...");
+          ModifyBatchScreen batchScreen = new ModifyBatchScreen(scanner);
+          regulationScreen.runner();
+          break;
+        case 6:
           runFlag = false;
           break;
         default:

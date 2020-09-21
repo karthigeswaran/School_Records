@@ -18,6 +18,12 @@ public class Result {
 
 	public void addMsg(String msg) {
 		this.msg.append(msg);
+		this.msg.append("\n");
+	}
+
+	public void merge(Result result){
+		this.setStatus(this.getStatus()&&result.getStatus());
+		this.addMsg(result.getMsg());
 	}
 
 }

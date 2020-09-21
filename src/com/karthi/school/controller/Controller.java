@@ -27,7 +27,8 @@ public abstract class Controller{
   public abstract void inputHandler(String option,Entity obj);
   public abstract Result create(Entity obj);
   public abstract Result read(Entity obj);
-  public abstract Result update(Entity obj);
+  public abstract Result update(Entity obj,String updateOption);
   public abstract Result delete(Entity obj);
+  protected abstract Result verify(Entity obj);
   
 }

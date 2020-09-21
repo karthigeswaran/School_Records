@@ -1,6 +1,5 @@
 package com.karthi.school.controller;
 
-import java.util.Date;
 import java.util.Scanner;
 
 import com.karthi.school.main.Entity;
@@ -16,39 +15,71 @@ public class StudentController extends Controller {
   @Override
   public void inputHandler(String option, Entity obj) {
     Student student = (Student) obj;
-    if(option == "name"){
+    if(option.equals("name")){
       student.setName(scanner.next());
-    }else if(option == "class"){
+    }else if(option.equals("class")){
       student.setClss(getInteger());
-    }else if(option == "section"){
+    }else if(option.equals("section")){
       student.setSection(getCharacter());
-    }else if(option == "dob(yyyy-mm-dd)"){
-      student.setDOB(new Date(scanner.next()));
-    }else if(option == "id"){
-      student.setID(getInteger());
+    }else if(option.equals("dob(yyyy-mm-dd)")){
+     student.setDOB(scanner.next());
+    }else if(option.equals("studentID")){
+      student.setStudentID(getInteger());
+    }else if(option.equals("class and section")){
+      System.out.println("Enter class: ");
+      student.setClss(getInteger());
+      System.out.println("Enter section: ");
+      student.setSection(getCharacter());
     }
-
   }
 
   @Override
   public Result create(Entity obj) {
-    return recordHandler.create(obj);
+    Result result = verify(obj);
+    if(!result.getStatus()){
+      result.setStatus(true);
+      result.merge(recordHandler.create(obj));
+    }else{
+      result.addMsg("Entry exists. ");
+    }
+    return result;
   }
 
   @Override
   public Result read(Entity obj) {
-    return recordHandler.read(obj);
+    Result result = verify(obj);
+    if(result.getStatus()){
+      result.merge(recordHandler.read(obj));
+    }else{
+      result.addMsg("Entry does not exists. ");
+    }
+    return result;
   }
 
   @Override
-  public Result update(Entity obj) {
-    return recordHandler.update(obj);
+  public Result update(Entity obj,String updateOption) {
+    Result result = verify(obj);
+    if(result.getStatus()){
+      result.merge(recordHandler.update(obj,updateOption));
+    }else{
+      result.addMsg("Entry does not exists. ");
+    }
+    return result;
   }
 
   @Override
   public Result delete(Entity obj) {
-    return recordHandler.delete(obj);
+    Result result = verify(obj);
+    if(result.getStatus()){
+      result.merge(recordHandler.delete(obj));
+    }else{
+      result.addMsg("Entry does not exists. ");
+    }
+    return result;
   }
 
-  
+  @Override
+  protected Result verify(Entity obj){
+    return recordHandler.verify(obj);
+  }
 }

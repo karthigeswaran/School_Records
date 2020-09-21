@@ -23,7 +23,7 @@ public class CreateView<T> {
   public void run() {
     boolean status = false;
     do{
-      for(String opt:option.getOption()){
+      for(String opt:option.getOption("createOptions")){
         System.out.print("Enter "+opt+": ");
         controller.inputHandler(opt,obj);
       }

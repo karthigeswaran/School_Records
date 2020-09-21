@@ -6,7 +6,7 @@ import java.util.Scanner;
 import com.karthi.school.recordHandler.UserRecordHandler;
 
 public class LoginScreen extends Screen {
-  private static final String DISPLAY_INFO = "School Records Application";
+  private static final String DISPLAY_INFO = "School Records Application.";
 
   public LoginScreen(Scanner scanner) {
     super(scanner, DISPLAY_INFO);
@@ -15,9 +15,9 @@ public class LoginScreen extends Screen {
 
   @Override
   protected void run() {
-    System.out.print("Enter user name");
+    System.out.print("Enter user name: ");
     String userName = scanner.next();
-    System.out.print("Enter password");
+    System.out.print("Enter password: ");
     String password = scanner.next();
     UserRecordHandler userRecord = new UserRecordHandler();
     int option = userRecord.verifyUser(userName,password);
